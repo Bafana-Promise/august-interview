@@ -1,0 +1,30 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column">
+      <table mat-table [dataSource]="todoData" class="table-width-fix">
+        <tr mat-header-row *matHeaderRowDef="[&apos;id&apos;,&apos;userId&apos;,&apos;title&apos;,&apos;completed&apos;]"></tr>
+        <tr mat-row *matRowDef="let row; columns: [&apos;id&apos;,&apos;userId&apos;,&apos;title&apos;,&apos;completed&apos;];"></tr>
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>Id</th>
+          <td mat-cell *matCellDef="let table; let i = index;">{{table.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="userId">
+          <th mat-header-cell *matHeaderCellDef>User Id</th>
+          <td mat-cell *matCellDef="let table; let i = index;">{{table.userId}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef>Title</th>
+          <td mat-cell *matCellDef="let table; let i = index;">{{table.title}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="completed">
+          <th mat-header-cell *matHeaderCellDef>Complete</th>
+          <td mat-cell *matCellDef="let table; let i = index;">{{table.completed}}</td>
+        </ng-container>
+      </table>
+    </div>
+  </div>
+</div>

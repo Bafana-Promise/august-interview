@@ -1,0 +1,129 @@
+[
+    {
+        "id": "sd_DLtkKzL3vBipTPwE",
+        "type": "tab",
+        "createdDate": "2021-08-30T11:50:09.003Z",
+        "relativeParentPath": "",
+        "label": "todoList",
+        "disabled": false,
+        "info": "",
+        "generateNext": true,
+        "serviceName": "todoList",
+        "generated": false
+    },
+    {
+        "id": "sd_liSW3tXD2XAHsRKe",
+        "type": "Start",
+        "z": "sd_DLtkKzL3vBipTPwE",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "getTodos",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getTodos",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 60,
+        "y": 100,
+        "wires": [
+            [
+                "sd_4F8wa7gAx3ivlwO7"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "todoList",
+        "generated": false
+    },
+    {
+        "id": "sd_IIWyOzSVr5c8caRB",
+        "type": "HttpRequest",
+        "z": "sd_DLtkKzL3vBipTPwE",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlValue": "http://localhost:8081/api/todoData",
+        "urlMappingObj": {},
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_IIWyOzSVr5c8caRB",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 305,
+        "y": 100,
+        "wires": [
+            [
+                "sd_WNdH2X1yZ5GerVoC"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_4F8wa7gAx3ivlwO7",
+        "type": "Script",
+        "z": "sd_DLtkKzL3vBipTPwE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local, \"Service\")",
+        "functionName": "sd_4F8wa7gAx3ivlwO7",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 200,
+        "y": 100,
+        "wires": [
+            [
+                "sd_IIWyOzSVr5c8caRB"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_WNdH2X1yZ5GerVoC",
+        "type": "Script",
+        "z": "sd_DLtkKzL3vBipTPwE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh)",
+        "functionName": "sd_WNdH2X1yZ5GerVoC",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 460,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true
+    }
+]
